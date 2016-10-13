@@ -1,0 +1,35 @@
+
+<%text = a.article_texte%>
+<%text_split = text.split('"')%>
+<% if text_split.size>1%>
+	<%text=""%>
+	<%text_split.each_with_index do |str,i|%>
+		<% if (i+1<text_split.size)%>
+			<% str += (i%2==1) ? "\"</span>" : "<span class='citation'>“"%>
+		<%end%>
+		<%text += str%>
+	<%end%>
+<%else%>
+	<%text = text.gsub('“',"<span class='citation'>“")%>
+	<%text = text.gsub('”',"”</span>")%>
+<%end%>
+<% text = simple_format(text)%>
+
+<div class='article'>
+	<div class="row">
+		<div class="col-sm-1">
+			<div class='titre'><%= "[#{a.article_id}]" %></div>
+		</div>
+		<div class="col-sm-8">
+			<div class='titre'><%="#{a.article_titre}"%></div>
+		</div>
+		<div class="col-sm-3">
+			<div class='date'><%= a.article_date_parution.strftime("%e %b %Y ")%></div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12">
+			<div class='texte'><%= text %></div>
+		</div>
+	</div>
+</div>

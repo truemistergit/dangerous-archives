@@ -1,0 +1,32 @@
+<div class="container">
+	<%= form_for @article do |f| %>
+		<div class="row">
+			<div class="col-xs-8">
+				<div class="form_field"> <%= f.text_field :titre, value:"", placeholder: "Titre"%> </div> 
+			</div>
+			<div class="col-xs-4">
+				<div class="form_field"> <%= f.text_field :date_parution, value:"", placeholder: "Date" %> </div> 
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="form_field"> <%= f.text_area  :texte, value:"", placeholder: "Texte"%> </div> 
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="form_field"><%= f.button class: "btn_form" %></div> 
+			</div>
+		</div>
+	<%end%>
+	<hr>
+	<% if !@articles.nil?%>
+		<% @articles.each do |a|%>
+			<%= render 'home/article',  a:a %>
+		<%end%>
+	<%end%>
+</div>
+
+

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Galnet</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+	<body class="page">
+
+		<nav class="navbar">
+			<ul>
+				<%= link_to      accueil_path do %><li>Accueil     </li><%end%>
+				<%= link_to form_article_path do %><li>Ajouter Article</li><%end%>
+			</ul>
+		</nav>
+		
+		<%= yield %>
+
+	</body>
+</html>

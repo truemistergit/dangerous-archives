@@ -1,0 +1,38 @@
+.navbar
+{
+	color:#ffffff;
+	background-color: #aaaaaa;
+	font-size: 1.2em;
+	/*margin-bottom: 10px;*/
+	padding-top: 0px;
+	max-height: 3.1em;
+}
+.navbar ul
+{
+	/*vertical-align: middle;*/
+}
+
+.navbar li
+{
+	display:inline-block;
+	line-height: 100%;
+	background-color:#bbaaaa;
+	padding:1.0em;
+	border-radius: 10px;
+}
+
+.navbar li:hover
+{
+	background-color:#9999ff;
+	color:#00f;
+}
+
+.navbar a
+{
+	color: inherit;
+	background-color:inherit;
+	font-style: normal;
+	height: 100%;
+	width:100%;
+}
+
